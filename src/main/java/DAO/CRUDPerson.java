@@ -13,8 +13,6 @@ public interface CRUDPerson {
 
     void createPerson(Statement stmt, Person Pr) throws SQLException;
 
-    Person viewPerson(Statement stmt, int personid, String fname, String lname, String adress, String email, int pole, String phone);
-
     void deletePerson(Statement stmt, int personid);
 
     void updatePerson(Statement stmt, int personid);
@@ -23,24 +21,8 @@ public interface CRUDPerson {
 
     ArrayList<Person> viewPersonLet(Statement stmt, String let); //All person for firts-letter in LastName
 
+    Person viewPerson(Statement stmt, int personid, String fname, String lname, String adress, String email, int pole, String phone);
+
 }
 
 
-//generation 1000 rows
-//    for (int i = 0; i < 1000; i++) {
-//        pr.setLname("testLastName" + i);
-//        pr.setFname("testFastName" + i);
-//        pr.setAdress("testAdress2" + i);
-//        pr.setEmail("test@test.ua2" + i);
-//        pr.setPhone("+380678794" + i);
-//        if ((i % 2) == 0) {
-//            pr.setPole(1);
-//        } else {
-//            pr.setPole(2);
-//        }
-//
-//        OraCRUDPerson OraCRUD = new OraCRUDPerson();
-//        OraCRUD.createPerson(stmt, pr);
-//    }
-
-//generation 1000 rows

@@ -77,8 +77,21 @@ table {
     clear: both;
 }
 
-ul {
-    list-style-type: armenian;
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #cecfd5;
+    padding: 10px 15px;
+}
+
+.header {
+
+    display: flex;
+
+    align-content: center;
+
 }
 
 div {

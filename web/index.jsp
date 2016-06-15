@@ -10,31 +10,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Notebook</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-</head>
 
 
-<body>
-
-<div class="header">
-
-    <form action="/login" method="post">
-        Search for:
-        <select name="serchCriter">
-            <option value="LName" selected>Last Name</option>
-            <option value="FName">First Name</option>
-            <option value="Phone">Phone</option>
-            <option value="EMail">Email</option>
-            <option value="Adress">Adress</option>
-        </select>
-        <input type="text" name="search">
-    </form>
-
-</div>
-
+<%@include file="/WEB-INF/jspf/head.jspf" %>
 
 <div class="alp_container">
 
@@ -83,33 +61,42 @@
         al = OraCRUD.viewPersonLet(stmt, "w");
     %>
 
-    <h4>Список:</h4>
+    <table class="UsersAll">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">First Name</th>
+        </tr>
 
     <%
         for (int i = 0; i < al.size(); i++) {
     %>
+        <tr>
+            <td><a href="#"><%=al.get(i).getPersonid()%></a></td>
+            <td><p><%=al.get(i).getLname()%></p></td>
+            <td><p><%=al.get(i).getFname()%></p></td>
 
-    <li><a href="#">
-        <%=i + " " + al.get(i).getLname() + " " + al.get(i).getFname() + " " + al.get(i).getEmail() + " " +
-                al.get(i).getAdress() + " " + al.get(i).getPhone()%>
-    </a></li>
+        </tr>
 
     <%}%>
+    </table>
 
 </div>
 
 <div class="UsersAttr">
-    <h4>Список телефонов:</h4>
 
-    <%
-        for (int i = 0; i < al.size(); i++) {
-    %>
+    <p>User id</p>
+    <input type="text" name="UseridAttr">
+    <p>First Name</p>
+    <input type="text" name="FNameAttr">
+    <p>Last Name</p>
+    <input type="text" name="LNameAttr">
+    <p>Phone</p>
+    <input type="text" name="Phone">
+    <p>Email</p>
+    <input type="text" name="Email">
 
-    <li><a href="#">
-        <%=i + " " + al.get(i).getPhone() + " " + al.get(i).getEmail()%>
-    </a></li>
 
-    <%}%>
 </div>
 
 

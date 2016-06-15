@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Notebook</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+<div class="header" align="center">
+
+    <form action="/index.jsp" method="post">
+
+        <img src="images/search.jpg" alt="search">
+        <select name="serchCriter">
+            <option value="LName" selected>Last Name</option>
+            <option value="FName">First Name</option>
+            <option value="Phone">Phone</option>
+            <option value="EMail">Email</option>
+            <option value="Adress">Adress</option>
+        </select>
+        <input type="text" name="search">
+        <input type="submit" value="search" id="search">
+    </form>
+
+</div>
